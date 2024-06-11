@@ -15,7 +15,7 @@ public class PatientsController : ControllerBase
         _masterService = masterService;
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("${patientId}")]
     public async Task<IActionResult> GetPatientsData(int patientId)
     {
         var patients = await _masterService.GetPatientsData(patientId);

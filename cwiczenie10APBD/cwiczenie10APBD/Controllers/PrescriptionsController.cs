@@ -45,6 +45,8 @@ public class PrescriptionsController : ControllerBase
 
         var prescription = new Prescription()
         {
+            IdPatient = newPrescriptionDto.Patient.IdPatient,
+            IdDoctor = newPrescriptionDto.IdDoctor,
             Date = newPrescriptionDto.Date,
             DueDate = newPrescriptionDto.DueDate
         };
@@ -80,7 +82,9 @@ public class PrescriptionsController : ControllerBase
         {
             Id = prescription.IdPrescription,
             prescription.Date,
-            prescription.DueDate
+            prescription.DueDate,
+            prescription.IdPatient,
+            prescription.IdDoctor
         });
     }
 }
